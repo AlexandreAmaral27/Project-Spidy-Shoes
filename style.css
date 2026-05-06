@@ -25,6 +25,41 @@ body {
     font-size:1.6rem;
 }
 
+
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #000;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px; /* deixa quadrado pra virar círculo */
+  border-radius: 50%; /* 🔥 deixa redondo */
+  object-fit: cover;
+  border: 2px solid red; /* opcional, fica bonito */
+}
+
+.logo h1 {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+}
+.logo img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+
 /* CART */
 .cart {
     background:#000;
