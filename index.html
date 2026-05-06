@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spidy Shoes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>🕷 Spidy Shoes</h1>
+
+    <div class="cart" onclick="toggleCarrinho()">
+        🛒 <span id="count">0</span>
+    </div>
+</header>
+<div class="promo-bar">
+    <marquee behavior="scroll" direction="left">
+        🕸️ PROMOÇÕES • ARTIGOS NOVOS E RECONDICIONADOS‼️ • ENTREGA EM MÃOS EM TODA LISBOA 📦 Encomende já • LOJA VINTED PARA QUEM ESTÁ FORA DE LISBOA👇🏽
+    </marquee>
+</div>
+
+<section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+        <div class="spider-icon">🕷️</div>
+
+        <h2>Vista o poder de um herói</h2>
+
+        <p>Tênis inspirados no universo Spider-Man — estilo, velocidade e atitude.</p>
+
+        <div class="hero-actions">
+            <button onclick="scrollToProdutos()">🛒 Explorar produtos</button>
+            <button class="ghost" onclick="openSocials()">📞 Contactos</button>
+        </div>
+    </div>
+</section>
+
+<section class="produtos" id="produtos">
+    <h2 style="text-align:center; margin-bottom:20px; color:red;">🔥 Produtos</h2>
+
+    <div class="cards">
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis01.jpeg">
+        <h3>Spidy Speed</h3>
+        <p>15.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Speed',15000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis01.jpeg">
+        <h3>Spidy Pro Black</h3>
+        <p>25.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Pro Black',25000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis01.jpeg">
+        <h3>Spidy Night Run</h3>
+        <p>18.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Night Run',18000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis01.jpeg">
+        <h3>Spidy Venom Edition</h3>
+        <p>30.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Venom Edition',30000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis01.jpeg">
+        <h3>Spidy Street White</h3>
+        <p>20.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Street White',20000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis03.jpeg">
+        <h3>Spidy Air Force</h3>
+        <p>28.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Air Force',28000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis03.jpeg">
+        <h3>Spidy Speed</h3>
+        <p>22.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Speed',22000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis03.jpeg">
+        <h3>Spidy Neon Blue</h3>
+        <p>24.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Blue',24000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis03.jpeg">
+        <h3>Spidy Classic</h3>
+        <p>19.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Classic',19000)">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="/Users/delciosimoes/Documents/GitHub/Project-Spider-Shoes/imagens/tenis03.jpeg">
+        <h3>Spidy Gold</h3>
+        <p>35.000 Kz</p>
+        <button onclick="addCarrinho('Spidy Gold',35000)">Comprar</button>
+    </div>
+
+</div>
+</section>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeCarrinho()"></div>
+
+<!-- CARRINHO LATERAL -->
+<div id="carrinhoBox">
+    <h3>🛒 Carrinho</h3>
+
+    <ul id="lista"></ul>
+
+    <div class="cart-footer">
+        <p>Total: <span id="total">0</span> Kz</p>
+        <button onclick="finalizar()">Finalizar compra</button>
+    </div>
+</div>
+<div id="socialOverlay" onclick="closeSocials()"></div>
+
+<div id="socialBox">
+    <h3>📞 Contactos & Redes</h3>
+
+    <a href="https://wa.me/351967299340" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/spidy.shoes/" target="_blank">📸 Instagram</a>
+    <a href="#" target="_blank">🎵 TikTok</a>
+    <a href="https://www.vinted.pt/member/261323998-spidyshoes001" target="_blank">🛍️ Vinted</a>
+    <a href="mailto:teuemail@email.com">📧 Email</a>
+
+    <button onclick="closeSocials()">Fechar</button>
+</div>
+<script>
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+function salvar() {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
+
+function addCarrinho(nome, preco) {
+    carrinho.push({nome, preco});
+    salvar();
+    atualizar();
+}
+
+function atualizar() {
+    let lista = document.getElementById("lista");
+    let total = 0;
+    lista.innerHTML = "";
+
+    carrinho.forEach(item => {
+        total += item.preco;
+        lista.innerHTML += `<li>${item.nome} - ${item.preco} Kz</li>`;
+    });
+
+    document.getElementById("total").innerText = total;
+    document.getElementById("count").innerText = carrinho.length;
+}
+
+function toggleCarrinho() {
+    let box = document.getElementById("carrinhoBox");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function finalizar() {
+    if (carrinho.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+    }
+
+    enviarWhats(); // 👉 envia para WhatsApp primeiro
+
+    setTimeout(() => {
+        carrinho = [];
+        salvar();
+        atualizar();
+    }, 1000);
+}
+function enviarWhats() {
+    let total = 0;
+
+    let texto = "🕷 *Spider Shoes - Nova Compra*\n\n";
+
+    carrinho.forEach((item, i) => {
+        total += item.preco;
+
+        texto += `👟 Produto ${i + 1}:\n`;
+        texto += `Nome: ${item.nome}\n`;
+        texto += `Preço: ${item.preco} Kz\n\n`;
+    });
+
+    texto += `💰 *Total: ${total} Kz*\n\n`;
+    texto += `📦 Por favor confirmar pedido.`;
+
+    let numero = "351967299340"; // teu WhatsApp Portugal
+
+    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+
+    window.open(url, "_blank");
+}
+function scrollToProdutos() {
+    document.getElementById("produtos").scrollIntoView({behavior:"smooth"});
+}
+
+atualizar();
+
+document.addEventListener("click", function(event) {
+    let carrinhoBox = document.getElementById("carrinhoBox");
+    let cartButton = document.querySelector(".cart");
+
+    let clicouDentroDoCarrinho = carrinhoBox.contains(event.target);
+    let clicouNoBotaoCarrinho = cartButton.contains(event.target);
+
+    if (!clicouDentroDoCarrinho && !clicouNoBotaoCarrinho) {
+        carrinhoBox.style.display = "none";
+    }
+});
+
+function openSocials() {
+    document.getElementById("socialOverlay").style.display = "block";
+    document.getElementById("socialBox").style.bottom = "30px";
+}
+
+function closeSocials() {
+    document.getElementById("socialOverlay").style.display = "none";
+    document.getElementById("socialBox").style.bottom = "-400px";
+}
+</script>
+
+</body>
+</html>

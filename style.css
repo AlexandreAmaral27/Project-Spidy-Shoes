@@ -1,0 +1,330 @@
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body {
+    background:#0a0a0a;
+    color:white;
+}
+
+/* HEADER */
+.header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    background:linear-gradient(90deg, #b30000, #ff0000);
+    box-shadow:0 0 20px red;
+}
+
+.header h1 {
+    font-size:1.6rem;
+}
+
+/* CART */
+.cart {
+    background:#000;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cart:hover {
+    transform:scale(1.05);
+}
+
+/* HERO */
+.hero {
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:radial-gradient(circle, #1a0000, #000);
+    padding:20px;
+}
+
+.hero-content h2 {
+    font-size:2.8rem;
+    color:#ff1a1a;
+    margin-bottom:10px;
+}
+
+.hero-content p {
+    opacity:0.8;
+    margin-bottom:20px;
+}
+
+.hero button {
+    padding:12px 25px;
+    border:none;
+    background:red;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.hero button:hover {
+    transform:scale(1.1);
+}
+
+/* PRODUTOS */
+.produtos {
+background: radial-gradient(circle, #1a0000, #000);
+    padding:40px 20px;
+}
+
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card {
+    background:#111;
+    border:1px solid red;
+    width:220px;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 0 20px red;
+}
+
+.card img {
+    width:100%;
+    border-radius:10px;
+}
+
+.card button {
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    background:red;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* CARRINHO */
+#carrinhoBox {
+    position:fixed;
+    right:20px;
+    top:80px;
+    width:280px;
+    background:#111;
+    border:1px solid red;
+    padding:15px;
+    border-radius:10px;
+    display:none;
+}
+
+#carrinhoBox ul {
+    list-style:none;
+    margin:10px 0;
+}
+
+#carrinhoBox li {
+    margin:5px 0;
+    font-size:14px;
+}
+
+.cart-footer button {
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    background:green;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    width:55px;
+    height:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:24px;
+    cursor:pointer;
+    box-shadow:0 0 10px #25D366;
+}
+
+.promo-bar {
+     background:linear-gradient(90deg, #b30000, #ff0000);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ff3b3b;
+    border-bottom: 1px solid #ff3b3b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-bar marquee {
+    font-size: 14px;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #1a0000, #000);
+}
+
+/* efeito de luz animada */
+.hero-bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 60%);
+    animation: moveLight 6s infinite alternate;
+}
+
+@keyframes moveLight {
+    from { transform: translate(-20%, -20%); }
+    to { transform: translate(20%, 20%); }
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.spider-icon {
+    font-size: 40px;
+    animation: float 2s infinite ease-in-out;
+    margin-bottom: 10px;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: #ff1a1a;
+    text-shadow: 0 0 20px red;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* botões */
+.hero-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero button {
+    padding: 12px 20px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px red;
+}
+
+/* botão secundário */
+.hero button.ghost {
+    background: transparent;
+    border: 1px solid red;
+}
+
+.hero button.ghost:hover {
+    background: red;
+}
+
+#socialOverlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    z-index:50;
+}
+
+#socialBox {
+    position:fixed;
+    bottom:-400px;
+    left:50%;
+    transform:translateX(-50%);
+    width:300px;
+    background:#111;
+    border:1px solid red;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    transition:0.4s ease;
+    z-index:60;
+}
+
+#socialBox h3 {
+    color:red;
+    margin-bottom:15px;
+}
+
+#socialBox a {
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:10px 0;
+    padding:10px;
+    background:#222;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+#socialBox a:hover {
+    background:red;
+}
+
+#socialBox button {
+    margin-top:10px;
+    width:100%;
+    padding:10px;
+    background:red;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
