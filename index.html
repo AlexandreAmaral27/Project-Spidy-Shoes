@@ -218,6 +218,47 @@ function finalizar() {
         atualizar();
     }, 1000);
 }
+function atualizar() {
+    let lista = document.getElementById("lista");
+    let total = 0;
+    lista.innerHTML = "";
+
+    carrinho.forEach((item, index) => {
+        total += item.preco;
+
+        lista.innerHTML += `
+        <li style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span>${item.nome} - ${item.preco} Kz</span>
+            <button onclick="removerItem(${index})" style="background:red; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">
+                ❌
+            </button>
+        </li>`;
+    });
+
+    document.getElementById("total").innerText = total;
+    document.getElementById("count").innerText = carrinho.length;
+}
+function removerItem(index) {
+    let itemRemovido = carrinho[index];
+
+    carrinho.splice(index, 1); // remove item
+    salvar();
+    atualizar();
+
+    // 🔊 som opcional (reutiliza o mesmo)
+    let som = document.getElementById("notificacaoSom");
+    som.currentTime = 0;
+    som.play();
+
+    // 💬 feedback
+    let toast = document.getElementById("toast");
+    toast.innerText = `❌ ${itemRemovido.nome} removido`;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
 function enviarWhats() {
     let total = 0;
 
