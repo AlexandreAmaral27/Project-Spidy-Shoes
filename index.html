@@ -26,6 +26,63 @@
     opacity: 1;
     transform: translateY(0);
 }
+#galeriaModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+#imagemGaleria{
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    animation: zoom .3s ease;
+}
+
+#fecharGaleria{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    font-size: 35px;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev{
+    left: 20px;
+}
+
+.next{
+    right: 20px;
+}
+
+@keyframes zoom{
+    from{
+        transform: scale(.8);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 <body>
@@ -68,72 +125,132 @@
     <h2 style="text-align:center; margin-bottom:20px; color:red;">🔥 Produtos</h2>
 
     <div class="cards">
+        
 
     <div class="card">
-        <img src="imagens/tenis01.jpeg">
-        <h3>Spidy Speed</h3>
+        <img src="imagens/nike air plus.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/nike air plus.jpeg',
+        'imagens/nike air plus2.jpeg',
+        'imagens/nike air plus3.jpeg'
+         ])">
+        <h3>SNIKE AIR MAX PLUS</h3>
         <p>15.000 €</p>
-        <button onclick="addCarrinho('Spidy Speed',15000)">Comprar</button>
+        <button onclick="addCarrinho('SNIKE AIR MAX PLUS',15000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis01.jpeg">
-        <h3>Spidy Pro Black</h3>
-        <p>25.000 €</p>
-        <button onclick="addCarrinho('Spidy Pro Black',25000)">Comprar</button>
+        <img src="imagens/tenis01.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis01.jpeg',
+        'imagens/tenis01-lado.jpeg',
+        'imagens/tenis01-costas.jpeg',
+        'imagens/tenis01-sola.jpeg'
+         ])">
+        <h3>SNIKE AIR MAX PLUS</h3>
+        <p>15.000 €</p>
+        <button onclick="addCarrinho('SNIKE AIR MAX PLUS',15000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis01.jpeg">
-        <h3>Spidy Night Run</h3>
-        <p>18.000 €</p>
-        <button onclick="addCarrinho('Spidy Night Run',18000)">Comprar</button>
+        <img src="imagens/tenis01.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis01.jpeg',
+        'imagens/tenis01-lado.jpeg',
+        'imagens/tenis01-costas.jpeg',
+        'imagens/tenis01-sola.jpeg'
+         ])">
+        <h3>SNIKE AIR MAX PLUS</h3>
+        <p>15.000 €</p>
+        <button onclick="addCarrinho('SNIKE AIR MAX PLUS',15000)">Comprar</button>
     </div>
-
+ 
     <div class="card">
-        <img src="imagens/tenis01.jpeg">
+        <img src="imagens/tenis01.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis01.jpeg',
+        'imagens/tenis01-lado.jpeg',
+        'imagens/tenis01-costas.jpeg',
+        'imagens/tenis01-sola.jpeg'
+         ])">
         <h3>Spidy Venom Edition</h3>
         <p>30.000 €</p>
         <button onclick="addCarrinho('Spidy Venom Edition',30000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis01.jpeg">
+        <img src="imagens/tenis01.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis01.jpeg',
+        'imagens/tenis01-lado.jpeg',
+        'imagens/tenis01-costas.jpeg',
+        'imagens/tenis01-sola.jpeg'
+         ])">
         <h3>Spidy Street White</h3>
         <p>20.000 €</p>
         <button onclick="addCarrinho('Spidy Street White',20000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis03.jpeg">
+        <img src="imagens/tenis03.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis03.jpeg',
+        'imagens/tenis03-lado.jpeg',
+        'imagens/tenis03-costas.jpeg',
+        'imagens/tenis03-sola.jpeg'
+         ])">
         <h3>Spidy Air Force</h3>
         <p>28.000 €</p>
         <button onclick="addCarrinho('Spidy Air Force',28000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis03.jpeg">
+        <img src="imagens/tenis03.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis03.jpeg',
+        'imagens/tenis03-lado.jpeg',
+        'imagens/tenis03-costas.jpeg',
+        'imagens/tenis03-sola.jpeg'
+         ])">
         <h3>Spidy Speed</h3>
         <p>22.000 €</p>
         <button onclick="addCarrinho('Spidy Speed',22000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis03.jpeg">
+        <img src="imagens/tenis03.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis03.jpeg',
+        'imagens/tenis03-lado.jpeg',
+        'imagens/tenis03-costas.jpeg',
+        'imagens/tenis03-sola.jpeg'
+         ])">
         <h3>Spidy Neon Blue</h3>
         <p>24.000 €</p>
         <button onclick="addCarrinho('Spidy Blue',24000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis03.jpeg">
+        <img src="imagens/tenis03.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis03.jpeg',
+        'imagens/tenis03-lado.jpeg',
+        'imagens/tenis03-costas.jpeg',
+        'imagens/tenis03-sola.jpeg'
+         ])">
         <h3>Spidy Classic</h3>
         <p>19.000 €</p>
         <button onclick="addCarrinho('Spidy Classic',19000)">Comprar</button>
     </div>
 
     <div class="card">
-        <img src="imagens/tenis03.jpeg">
+        <img src="imagens/tenis03.jpeg" 
+         onclick="abrirGaleria([
+        'imagens/tenis03.jpeg',
+        'imagens/tenis03-lado.jpeg',
+        'imagens/tenis03-costas.jpeg',
+        'imagens/tenis03-sola.jpeg'
+         ])">
         <h3>Spidy Gold</h3>
         <p>35.000 €</p>
         <button onclick="addCarrinho('Spidy Gold',35000)">Comprar</button>
@@ -172,6 +289,18 @@
 <div id="toast">Produto adicionado ao carrinho 🛒</div>
 <audio id="somFinalizar" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
 <audio id="notificacaoSom" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+<!-- GALERIA -->
+<div id="galeriaModal">
+    
+    <span id="fecharGaleria" onclick="fecharGaleria()">✖</span>
+
+    <button class="nav prev" onclick="mudarImagem(-1)">❮</button>
+
+    <img id="imagemGaleria">
+
+    <button class="nav next" onclick="mudarImagem(1)">❯</button>
+
+</div>
 <script>
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
@@ -333,6 +462,41 @@ function mostrarToast(nome) {
     setTimeout(() => {
         toast.classList.remove("show");
     }, 3000);
+}
+
+let imagensGaleria = [];
+let imagemAtual = 0;
+
+function abrirGaleria(imagens){
+    imagensGaleria = imagens;
+    imagemAtual = 0;
+
+    document.getElementById("galeriaModal").style.display = "flex";
+
+    mostrarImagem();
+}
+
+function mostrarImagem(){
+    document.getElementById("imagemGaleria").src = imagensGaleria[imagemAtual];
+}
+
+function mudarImagem(direcao){
+
+    imagemAtual += direcao;
+
+    if(imagemAtual < 0){
+        imagemAtual = imagensGaleria.length - 1;
+    }
+
+    if(imagemAtual >= imagensGaleria.length){
+        imagemAtual = 0;
+    }
+
+    mostrarImagem();
+}
+
+function fecharGaleria(){
+    document.getElementById("galeriaModal").style.display = "none";
 }
 </script>
 
