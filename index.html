@@ -109,7 +109,38 @@
 .card img:hover{
     transform: scale(1.03);
 }
+.filtros{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
 
+.filtro-btn{
+    background:#111;
+    color:white;
+    border:2px solid #222;
+    padding:12px 22px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.filtro-btn:hover{
+    transform:translateY(-3px);
+    background:red;
+    border-color:red;
+    box-shadow:0 10px 25px rgba(255,0,0,0.4);
+}
+
+.filtro-btn.active{
+    background:red;
+    border-color:red;
+    box-shadow:0 10px 25px rgba(255,0,0,0.4);
+}
 </style>
 </head>
 <body>
@@ -150,7 +181,21 @@
 
 <section class="produtos" id="produtos">
     <h2 style="text-align:center; margin-bottom:20px; color:red;">🔥 Produtos</h2>
+    <div class="filtros">
 
+    <button class="filtro-btn active" onclick="filtrarProdutos('todos', this)">
+        🔥 Todos
+    </button>
+
+    <button class="filtro-btn" onclick="filtrarProdutos('novo', this)">
+        ✨ Novos
+    </button>
+
+    <button class="filtro-btn" onclick="filtrarProdutos('recondicionado', this)">
+        ♻️ Recondicionados
+    </button>
+
+    </div>
     <div class="cards">
         
 
@@ -520,6 +565,33 @@ function mudarImagem(direcao){
 
 function fecharGaleria(){
     document.getElementById("galeriaModal").style.display = "none";
+}
+function filtrarProdutos(categoria, botao){
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        if(categoria === "todos"){
+            card.style.display = "block";
+        } 
+        
+        else if(card.dataset.categoria === categoria){
+            card.style.display = "block";
+        } 
+        
+        else{
+            card.style.display = "none";
+        }
+
+    });
+
+    // botão ativo
+    document.querySelectorAll(".filtro-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    botao.classList.add("active");
 }
 </script>
 
