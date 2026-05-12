@@ -83,11 +83,6 @@
         opacity: 1;
     }
 }
-.cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
-}
 
 .card{
     background: #111;
@@ -100,7 +95,6 @@
 .card img{
     width: 100%;
     height: 250px; /* tamanho fixo */
-    object-fit: cover; /* corta sem deformar */
     border-radius: 15px;
     cursor: pointer;
     transition: 0.3s;
@@ -199,7 +193,7 @@
     <div class="cards">
         
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/nike air plus.jpeg" 
          onclick="abrirGaleria([
         'imagens/nike air plus.jpeg',
@@ -211,7 +205,7 @@
         <button onclick="addCarrinho('NIKE AIR MAX PLUS',15000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/NIKE AIR FORCE 1 white.jpeg" 
          onclick="abrirGaleria([
         'imagens/NIKE AIR FORCE 1 white.jpeg',
@@ -223,7 +217,7 @@
         <button onclick="addCarrinho('NIKE AIR FORCE 1 WHITE',15000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/NIKE AIR FORCE 1 Black.jpeg" 
          onclick="abrirGaleria([
         'imagens/NIKE AIR FORCE 1 Black.jpeg',
@@ -235,7 +229,7 @@
         <button onclick="addCarrinho('NIKE AIR FORCE 1 BLACK',15000)">Comprar</button>
     </div>
  
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/JORDAN 11 RETRO GRATITUDE.jpeg" 
          onclick="abrirGaleria([
         'imagens/JORDAN 11 RETRO GRATITUDE.jpeg',
@@ -247,7 +241,7 @@
         <button onclick="addCarrinho('JORDAN 11 RETRO GRATITUDE',30000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/AIR JORDAN 11 RETRO CHERRY.jpeg" 
          onclick="abrirGaleria([
         'imagens/AIR JORDAN 11 RETRO CHERRY.jpeg',
@@ -259,7 +253,7 @@
         <button onclick="addCarrinho('AIR JORDAN 11 RETRO CHERRY',20000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/tenis03.jpeg" 
          onclick="abrirGaleria([
         'imagens/tenis03.jpeg',
@@ -272,7 +266,7 @@
         <button onclick="addCarrinho('Spidy Air Force',28000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/tenis03.jpeg" 
          onclick="abrirGaleria([
         'imagens/tenis03.jpeg',
@@ -285,7 +279,7 @@
         <button onclick="addCarrinho('Spidy Speed',22000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/tenis03.jpeg" 
          onclick="abrirGaleria([
         'imagens/tenis03.jpeg',
@@ -298,7 +292,7 @@
         <button onclick="addCarrinho('Spidy Blue',24000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/tenis03.jpeg" 
          onclick="abrirGaleria([
         'imagens/tenis03.jpeg',
@@ -311,7 +305,7 @@
         <button onclick="addCarrinho('Spidy Classic',19000)">Comprar</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-categoria="novo">
         <img src="imagens/tenis03.jpeg" 
          onclick="abrirGaleria([
         'imagens/tenis03.jpeg',
